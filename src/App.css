@@ -1,12 +1,25 @@
 body{
-  background-color: #9266ff;
+  background-image: linear-gradient(90deg,#1a3046,#0a5228,#0c4164,#70170f,#4a1064);
+  background-size: 400% 400%;
+  animation: bganimation 120s infinite;
+  align-items: center;
 }
-
+@keyframes bganimation {
+  0%{
+    background-position: 0% 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0% 50%;
+  }
+}
 .App{
-  background-color: #3f3160;
+  background-color: transparent;
   min-height: 500px;
-  width: 400px;
-  margin: 40px auto;
+  width: 450px;
+  margin: 150px auto;
 }
 
 #to-do-form input{
@@ -29,13 +42,56 @@ body{
   outline: none;
 }
 
-#to-do-form button{
-  height: 50px;
-  width: 80px;
-  border-radius: 5px;
-  border: 0;
-  background-color: rgb(202,156,24);
+
+#to-do-form button {
   cursor: pointer;
-  font-weight: bolder;
+  transform: translate(0%, 0%);
+  width: 150px;
+  height: 50px;
+  text-align: center;
   color: #fff;
+  font-size: 25px;
+  font-family: sans-serif;
+  font-weight: lighter;
+  box-sizing: border-box;
+  background: linear-gradient(90deg, #03a9f4, #f441a4, #ffeb3b, #03a9f4);
+  background-size: 400%;
+  border-radius: 30px;
+  border: transparent;
+}
+
+#to-do-form button:hover {
+  animation: animate 8s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+      background-position: 0%;
+  }
+
+  100% {
+      background-position: 400%;
+  }
+}
+
+#to-do-form button:before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  right: -5px;
+  left: -5px;
+  z-index: -1;
+  background: linear-gradient(90deg, #03a9f4, #f441a4, #ffeb3b, #03a9f4);
+  background-size: 400%;
+  border-radius: 40px;
+  filter: blur(20px);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+#to-do-form button:hover:before {
+  filter: blur(20px);
+  opacity: 1;
+  animation: animate 8s linear infinite;
 }
