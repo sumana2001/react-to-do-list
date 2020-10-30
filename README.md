@@ -1,6 +1,8 @@
 # To Do List
 Simple to-do list application made using React😄
 
+![](public/sample.gif)
+
 ## ✨ Features
 
 - Add Items
